@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Sistema prodotto</h1>
+<div mat-dialog-content>
+  <p>In quale ripiano vuoi sistemare "{{data.prodotto.nome}}" ?</p>
+
+  <mat-form-field>
+    <mat-label>Ripiano</mat-label>
+    <mat-select [(value)]="data.ripianoSelezionato">
+      <mat-option *ngFor="let ripiano of ripiani" [value]="ripiano">
+        {{ripiano}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Annulla</button>
+  <button mat-button [mat-dialog-close]="data.ripianoSelezionato" cdkFocusInitial>Sistema</button>
+</div>

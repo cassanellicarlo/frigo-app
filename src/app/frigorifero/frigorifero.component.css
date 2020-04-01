@@ -1,0 +1,14 @@
+.example-container {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 2em;
+  }
+  
+.example-container > * {
+    width: 100%;
+}
+
+.bottone-ordina{
+    padding-left: 2em;
+    padding-top: 2em;
+}

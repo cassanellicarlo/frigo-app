@@ -1,0 +1,6 @@
+<app-prodotto 
+    *ngFor="let prodotto of listaProdotti" 
+    [prodotto]="prodotto"
+    (sistemaNelFrigo)="sistema($event)">
+</app-prodotto>
+

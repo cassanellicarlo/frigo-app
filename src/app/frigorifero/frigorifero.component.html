@@ -1,0 +1,63 @@
+<mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon aria-hidden="false" aria-label="Lista">list</mat-icon>  Lista Prodotti
+      </ng-template>
+
+      
+      <button class="bottone-ordina" mat-button color="primary" (click)="ordinaProdotti()"><mat-icon aria-hidden="false" aria-label="Ordina">sort</mat-icon> Ordina per data di scadenza</button>
+      
+      <form class="example-container">
+        <mat-form-field class="example-full-width">
+            <input 
+                type="text"
+                placeholder="Cerca Prodotto"
+                aria-label="Number"
+                matInput
+                [formControl]="myControl"
+                #cerca (keyup)="onKey(cerca.value)">
+        </mat-form-field>
+      </form>      
+
+      <app-lista-prodotti [listaProdotti]="listaProdottiFiltrati" (sistemaNelFrigo)="sistema($event)"></app-lista-prodotti>
+    </mat-tab>
+  
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Verdure
+      </ng-template>
+      <app-lista-prodotti [listaProdotti]="listaVerdure"></app-lista-prodotti>
+    </mat-tab>
+  
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Salumi
+      </ng-template>
+
+      <app-lista-prodotti [listaProdotti]="listaSalumi"></app-lista-prodotti>
+    </mat-tab>
+
+    <mat-tab>
+        <ng-template mat-tab-label>
+          Formaggi
+        </ng-template>
+  
+        <app-lista-prodotti [listaProdotti]="listaFormaggi"></app-lista-prodotti>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          Bibite
+        </ng-template>
+  
+        <app-lista-prodotti [listaProdotti]="listaBibite"></app-lista-prodotti>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          Altro
+        </ng-template>
+  
+        <app-lista-prodotti [listaProdotti]="listaAltro"></app-lista-prodotti>
+      </mat-tab>
+</mat-tab-group>
